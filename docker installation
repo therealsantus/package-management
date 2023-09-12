@@ -1,8 +1,24 @@
+
+# ubuntu
+###########################
 #!/bin/bash
-# 'installation for ubuntu'
-sudo apt update -y
-sudo apt install docker.io -y 
-sudo service docker start
-sudo docker info 
 sudo hostnamectl set-hostname docker
-sudo su -ubuntu
+sudo apt update -y
+sudo apt install docker.io -y
+sudo service docker start
+sudo docker info
+sudo usermod -aG docker ubuntu
+sudo su - ubuntu    
+sudo docker ps   
+
+
+# Amazon Linux
+###########################
+#!/bin/bash
+sudo yum update -y    
+sudo yum install docker -y
+sudo service docker start
+sudo hostnamectl set-hostname docker
+sudo usermod -aG docker ec2-user
+sudo su - ec2-user
+sudo docker ps
